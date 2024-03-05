@@ -2,8 +2,8 @@
   <div class="home">
     <div class="landing">
       <div class="content">
-        <h1>Ngineep Company Profile Website</h1>
-        <p>Hospitality Template - One page simple minimalist</p>
+        <h1>Resto Company Profile Website</h1>
+        <p>One page simple minimalist</p>
         <button>Learn More</button>
       </div>
       <img src="@/assets/image.png" alt="" />
