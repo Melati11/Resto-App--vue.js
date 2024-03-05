@@ -2,35 +2,48 @@
   <div class="home">
     <div class="landing">
       <div class="content">
-        <h1>Resto Company Profile Website</h1>
-        <p>One page simple minimalist</p>
-        <button>Learn More</button>
+        <h1 class="mobile-h1">Ngineep Company Profile Website</h1>
+        <p class="mobile-p">
+          Hospitality Template - One page simple minimalist
+        </p>
+        <button class="btn-desktop">Learn More</button>
       </div>
-      <img src="@/assets/image.png" alt="" />
+      <div>
+        <img src="@/assets/image.png" alt="" />
+        <button class="btn-mobile">Learn More</button>
+      </div>
     </div>
 
-    <div class="product">
-      <div class="filter">
-        <p>Product Type</p>
-        <div class="checkbox">
-          <input type="checkbox" name="type" id="type" />
-          <h5>Compeny Profile Website</h5>
-        </div>
-      </div>
-      <div class="menu">
-        <router-link
-          class="card"
-          v-for="(product, index) in data"
-          :key="index"
-          :to="{ name: 'ProductDetail', params: { id: product.id } }"
-          exact
-        >
-          <div>
-            <img src="@/assets/kopi.webp" alt="" />
-            <h3>{{ product.name }}</h3>
-            <p>{{ product.price }}</p>
+    <div class="container">
+      <div class="product">
+        <div class="filter col-lg-3">
+          <p>Product Type</p>
+          <div class="checkbox">
+            <input type="checkbox" name="type" id="type" />
+            <h5>Compeny Profile Website</h5>
           </div>
-        </router-link>
+        </div>
+        <div class="menu col-lg-9">
+          <div class="row">
+            <router-link
+              class="card text-decoration-none col-lg-4 gx-3"
+              v-for="(product, index) in data"
+              :key="index"
+              :to="{ name: 'ProductDetail', params: { id: product.id } }"
+              exact
+            >
+              <div>
+                <img
+                  src="@/assets/test.jpg"
+                  class="product-img img-fluid"
+                  alt=""
+                />
+                <h3>{{ product.name }}</h3>
+                <p>Rp. {{ product.price }}</p>
+              </div>
+            </router-link>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -44,7 +57,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 288px;
+  padding: 0 240px;
 }
 
 .landing .content {
@@ -82,7 +95,6 @@
 .product {
   margin-top: 100px;
   display: flex;
-  padding: 0 48px;
 }
 
 .product .filter p {
@@ -94,7 +106,6 @@
 .product .filter h5 {
   font-weight: 600;
   font-size: 18px;
-  margin-right: 222px;
   margin-bottom: 0;
 }
 
@@ -102,7 +113,6 @@
   width: 1, 356px;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
 }
 
 .checkbox {
@@ -112,10 +122,9 @@
 }
 
 .menu .card {
-  width: 370.56px;
   overflow: hidden;
-  height: 460.71px;
   border: none;
+  border-radius: 4px;
 }
 
 .menu .card h3 {
@@ -135,10 +144,69 @@
 }
 
 .menu img {
-  width: 432.56;
-  height: 324.02px;
+  width: 100%;
   object-fit: cover;
   text-decoration: none;
+  border-radius: 4px;
+}
+.btn-mobile {
+  display: none;
+}
+@media screen and (max-width: 576px) {
+  .landing {
+    padding: 0;
+    display: block;
+    padding: 5%;
+    height: 110vh;
+  }
+  .mobile-h1 {
+    width: 40%;
+    line-height: 63px;
+    margin-bottom: 24px;
+  }
+  .mobile-p {
+    width: 40%;
+    margin-bottom: 40px;
+  }
+  .btn-desktop {
+    display: none;
+  }
+  .btn-mobile {
+    display: block;
+    margin: auto;
+    padding: 12px 48px;
+    background-color: #ed3237;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    margin-top: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    width: 328px;
+  }
+  .landing img {
+    display: flex;
+    margin: auto;
+    width: 328px;
+  }
+  .landing .content {
+    width: 774px;
+    height: fit-content;
+  }
+  .filter {
+    display: none;
+  }
+  .menu .card {
+    width: 50%;
+    margin: auto;
+  }
+  .product {
+    margin-top: 24px;
+  }
+  .menu {
+    padding: 0 19px;
+  }
 }
 </style>
 
