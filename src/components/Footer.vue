@@ -32,6 +32,7 @@ footer {
   justify-content: space-between;
   padding: 0 222px;
   height: 72px;
+  margin-top: 7px;
 }
 
 footer .copy {
@@ -51,5 +52,15 @@ footer .social {
 
 footer .social p {
   margin: 0;
+}
+@media screen and (max-width: 576px) {
+  footer {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0 27px;
+  }
+  .copy {
+    padding-bottom: 15px;
+  }
 }
 </style>
