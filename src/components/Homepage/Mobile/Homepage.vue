@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <navbar></navbar>
     <div class="landing">
       <div class="content">
         <h1 class="mobile-h1">Ngineep Company Profile Website</h1>
@@ -40,7 +41,7 @@
     </div>
   </div>
 </template>
-  
+
 <style scoped>
 .landing {
   background-color: #f1f1f1;
@@ -178,12 +179,16 @@
   border-radius: 4px;
 }
 </style>
-  
-  <script>
+
+<script>
 import axios from "axios";
+import Navbar from "@/components/NavBarPublic.vue";
 
 export default {
   name: "HomeView",
+  components: {
+    Navbar,
+  },
   data() {
     return {
       data: null,
@@ -201,4 +206,3 @@ export default {
   },
 };
 </script>
-  

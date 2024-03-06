@@ -1,55 +1,75 @@
 <template>
   <div class="home">
+    <navbar></navbar>
     <div class="landing">
       <div class="content">
-        <h1 class="mobile-h1">Ngineep Company Profile Website</h1>
-        <p class="mobile-p">
-          Hospitality Template - One page simple minimalist
-        </p>
+        <p>#New</p>
+        <h1>Ngineep Company Profile Website</h1>
+        <p>Hospitality Template - One page simple minimalist</p>
         <button class="btn-desktop">Learn More</button>
       </div>
       <div>
         <img src="@/assets/image.png" alt="" />
-        <button class="btn-mobile">Learn More</button>
       </div>
     </div>
 
-    <div class="container">
-      <div class="product">
-        <div class="filter col-lg-3">
-          <p>Product Type</p>
-          <div class="checkbox">
-            <input type="checkbox" name="type" id="type" />
-            <h5>Compeny Profile Website</h5>
-          </div>
-        </div>
-        <div class="menu col-lg-9">
-          <div class="row">
-            <router-link
-              class="card text-decoration-none col-lg-4 gx-3"
-              v-for="(product, index) in data"
-              :key="index"
-              :to="{ name: 'ProductDetail', params: { id: product.id } }"
-              exact
-            >
-              <div>
-                <img
-                  src="@/assets/test.jpg"
-                  class="product-img img-fluid"
-                  alt=""
-                />
-                <h3>{{ product.name }}</h3>
-                <p>Rp. {{ product.price }}</p>
-              </div>
-            </router-link>
-          </div>
+    <div class="menu">
+      <div class="filter">
+        <p>Product Type</p>
+        <div class="checkbox">
+          <input type="checkbox" name="select" id="select" />
+          <label for="select">Company Profile Website</label>
         </div>
       </div>
+      <div class="product">
+        <router-link
+          class="card text-decoration-none"
+          v-for="(product, index) in data"
+          :key="index"
+          :to="{ name: 'ProductDetail', params: { id: product.id } }"
+          exact
+        >
+          <div>
+            <img src="@/assets/test.jpg" class="product-img img-fluid" alt="" />
+            <h3>{{ product.name }}</h3>
+            <p>Rp. {{ product.price }}</p>
+          </div>
+        </router-link>
+      </div>
     </div>
+
+    <!-- <div class="product">
+      <div class="filter">
+        <p>Product Type</p>
+        <div class="checkbox">
+          <input type="checkbox" name="type" id="type" />
+          <h5>Compeny Profile Website</h5>
+        </div>
+      </div>
+      <div class="menu 9">
+        <router-link
+          class="card text-decoration-none"
+          v-for="(product, index) in data"
+          :key="index"
+          :to="{ name: 'ProductDetail', params: { id: product.id } }"
+          exact
+        >
+          <div>
+            <img src="@/assets/test.jpg" class="product-img img-fluid" alt="" />
+            <h3>{{ product.name }}</h3>
+            <p>Rp. {{ product.price }}</p>
+          </div>
+        </router-link>
+      </div>
+    </div> -->
   </div>
 </template>
-  
-  <style scoped>
+
+<style scoped>
+* {
+  margin: 0;
+  padding: 0;
+}
 .landing {
   background-color: #f1f1f1;
   height: 100vh;
@@ -69,9 +89,19 @@
   font-size: 42px;
   font-weight: 700;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 24px;
+}
+
+.landing .content p:first-child {
+  margin-bottom: 16px;
+  color: #ed3237;
+  font-weight: 400;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
 }
 
 .landing .content p {
+  margin-bottom: 32px;
   font-size: 24px;
   font-weight: 700;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -92,9 +122,78 @@
   border-radius: 16px;
 }
 
-.product {
+.menu {
   margin-top: 100px;
   display: flex;
+  padding: 0 48px;
+}
+
+.menu .filter {
+  width: 33.5%;
+}
+
+.menu .filter .checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+  gap: 10px;
+}
+
+.menu .filter p {
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  color: #00000080;
+}
+
+.menu .filter .checkbox label {
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+}
+
+.menu .product {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 1356px;
+}
+
+.menu .product img {
+  width: 350px;
+}
+
+.menu .product h3 {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 400;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.menu .product p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #00000099;
+  margin-top: 13px;
+}
+
+.card {
+  overflow: hidden;
+  border: none;
+}
+/* 
+.product {
+  margin-top: 100px;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  justify-content: space-between;
+  background-color: #ed3237;
+}
+
+.filter {
+  margin-top: 24px;
 }
 
 .product .filter p {
@@ -110,9 +209,16 @@
 }
 
 .menu {
-  width: 1, 356px;
   display: flex;
   flex-wrap: wrap;
+  margin-left: 222px;
+  background-color: aqua;
+  width: 80%;
+}
+
+.row {
+  display: flex;
+  gap: 24px;
 }
 
 .checkbox {
@@ -125,6 +231,7 @@
   overflow: hidden;
   border: none;
   border-radius: 4px;
+  width: 330px;
 }
 
 .menu .card h3 {
@@ -151,14 +258,16 @@
 }
 .btn-mobile {
   display: none;
-}
+} */
 </style>
-  
-  <script>
+
+<script>
 import axios from "axios";
+import Navbar from "@/components/NavBarPublic.vue";
 
 export default {
   name: "HomeView",
+  components: { Navbar },
   data() {
     return {
       data: null,
@@ -176,4 +285,3 @@ export default {
   },
 };
 </script>
-  
