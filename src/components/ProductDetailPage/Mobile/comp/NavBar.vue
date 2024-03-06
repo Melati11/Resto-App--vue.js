@@ -42,7 +42,7 @@ export default {
       data: null,
     };
   },
-  mounted() {
+  beforeMount() {
     // Mengambil ID produk dari objek route
     this.productId = this.$route.params.id;
     axios
