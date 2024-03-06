@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-sm">
-    <div class="logo" v-if="isMobile">
+    <div class="logo" v-if="!isMobile">
       <svg
         width="36"
         height="24"

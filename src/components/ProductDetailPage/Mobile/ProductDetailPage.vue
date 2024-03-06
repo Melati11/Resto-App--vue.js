@@ -1,31 +1,31 @@
 <template>
-  <div>
+  <div style="padding-bottom: 64px">
     <NavBar></NavBar>
     <div class="row">
       <div class="col-span-12">
-        <img src="@/assets/detail_spotlight.jpg" alt="" class="w-100" />
+        <img src="@/assets/salad-buah-yoghurt.jpg" alt="" class="w-100" />
       </div>
     </div>
     <div class="container">
       <div class="row mt-3">
         <div class="scrolling-wrapper d-flex">
           <div class="col-span-4 me-2">
-            <img src="@/assets/gbr1.jpg" alt="" />
+            <img src="@/assets/sandwich daging.jpeg" width="104" alt="" />
           </div>
           <div class="col-span-4 me-2">
-            <img src="@/assets/gbr2.jpg" alt="" />
+            <img src="@/assets/sayur-bening.jpg" width="104" alt="" />
           </div>
           <div class="col-span-4 me-2">
-            <img src="@/assets/gbr3.jpg" alt="" />
+            <img src="@/assets/salmon.jpg" width="104" alt="" />
           </div>
           <div class="col-span-4 me-2">
-            <img src="@/assets/gbr1.jpg" alt="" />
+            <img src="@/assets/sandwich daging.jpeg" width="104" alt="" />
           </div>
           <div class="col-span-4 me-2">
-            <img src="@/assets/gbr2.jpg" alt="" />
+            <img src="@/assets/sayur-bening.jpg" width="104" alt="" />
           </div>
           <div class="col-span-4 me-2">
-            <img src="@/assets/gbr3.jpg" alt="" />
+            <img src="@/assets/salmon.jpg" width="104" alt="" />
           </div>
         </div>
       </div>
