@@ -1,31 +1,34 @@
 <template>
   <div>
-    <h1>Product Detail</h1>
-    <p>Product ID: {{ productId }}</p>
-    <p>{{ data }}</p>
+    <DetailMobile v-if="isMobile" />
+    <DetailDesktop v-else />
   </div>
 </template>
 
+<style scoped>
+</style>
+
 <script>
-import axios from "axios";
+import DetailDesktop from "@/components/ProductDetailPage/Desktop/ProductDetailPage.vue";
+import DetailMobile from "@/components/ProductDetailPage/Mobile/ProductDetailPage.vue";
 export default {
+  name: "DetailPage",
+  components: {
+    DetailDesktop,
+    DetailMobile,
+  },
   data() {
     return {
-      productId: null,
-      data: null,
+      isMobile: false,
     };
   },
-  mounted() {
-    // Mengambil ID produk dari objek route
-    this.productId = this.$route.params.id;
-    axios
-      .get(`http://localhost:5500/product/${this.productId}`)
-      .then((response) => {
-        this.data = response.data.data;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  methods: {
+    handleView() {
+      this.isMobile = screen.width <= 900;
+    },
+  },
+  beforeMount() {
+    this.handleView();
   },
 };
 </script>
