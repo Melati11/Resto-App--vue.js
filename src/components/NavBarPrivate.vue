@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-sm">
-    <div class="logo">
+    <div class="logo" v-if="isMobile">
       <svg
         width="36"
         height="24"
@@ -47,6 +47,24 @@
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isMobile: false,
+    };
+  },
+  methods: {
+    handleView() {
+      this.isMobile = screen.width <= 900;
+    },
+  },
+  beforeMount() {
+    this.handleView();
+  },
+};
+</script>
 
 <style scoped>
 * {

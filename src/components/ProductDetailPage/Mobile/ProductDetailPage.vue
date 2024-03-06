@@ -1,5 +1,6 @@
 <template>
   <div>
+    <NavBar></NavBar>
     <div class="row">
       <div class="col-span-12">
         <img src="@/assets/detail_spotlight.jpg" alt="" class="w-100" />
@@ -41,10 +42,14 @@
     </div>
   </div>
 </template>
-  
+
 <script>
 import axios from "axios";
+import NavBar from "@/components/ProductDetailPage/Mobile/comp/NavBar.vue";
 export default {
+  components: {
+    NavBar,
+  },
   data() {
     return {
       productId: null,
@@ -90,4 +95,3 @@ export default {
   font-size: 1.3em;
 }
 </style>
-  
