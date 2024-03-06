@@ -7,7 +7,7 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/">List produk</a></li>
           <li class="breadcrumb-item active" aria-current="page">
-            Makanan sehat - Salad Buah
+            Makanan sehat - {{ productId.name }}
           </li>
         </ol>
       </nav>
@@ -16,9 +16,10 @@
     <div class="details justify-content-center">
       <div class="product" id="content">
         <img
-          src="@/assets/salad-buah-yoghurt.jpg"
-          width="450"
-          class="img-fluid rounded"
+          :src="`../assets/${productId.image_url}`"
+          class="product-img img-fluid"
+          alt=""
+          style="border-radius: 10px; margin-right: 16px"
         />
         <br /><br />
         <div class="pics">

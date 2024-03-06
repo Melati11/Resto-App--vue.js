@@ -29,8 +29,13 @@
           :to="{ name: 'ProductDetail', params: { id: product.id } }"
           exact
         >
-          <div>
-            <img src="@/assets/test.jpg" class="product-img img-fluid" alt="" />
+          <div class="content">
+            <img
+              :src="`./assets/${product.image_url}`"
+              class="product-img img-fluid"
+              alt=""
+              style="border-radius: 10px"
+            />
             <h3>{{ product.name }}</h3>
             <p>Rp. {{ product.price }}</p>
           </div>
@@ -175,6 +180,10 @@
   font-weight: 400;
   color: #00000099;
   margin-top: 13px;
+}
+
+.card .content {
+  overflow: hidden;
 }
 
 .card {

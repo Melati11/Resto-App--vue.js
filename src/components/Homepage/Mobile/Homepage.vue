@@ -27,9 +27,10 @@
             >
               <div>
                 <img
-                  src="@/assets/test.jpg"
+                  :src="`./assets/${product.image_url}`"
                   class="product-img img-fluid"
                   alt=""
+                  style="border-radius: 10px"
                 />
                 <h3>{{ product.name }}</h3>
                 <p>Rp. {{ product.price }}</p>

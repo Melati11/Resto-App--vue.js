@@ -2,9 +2,12 @@
   <div style="padding-bottom: 64px">
     <NavBar></NavBar>
     <div class="row">
-      <div class="col-span-12">
-        <img src="@/assets/salad-buah-yoghurt.jpg" alt="" class="w-100" />
-      </div>
+      <img
+        :src="`../assets/${data.image_url}`"
+        class="product-img img-fluid"
+        alt=""
+        style="border-radius: 10px"
+      />
     </div>
     <div class="container">
       <div class="row mt-3">
